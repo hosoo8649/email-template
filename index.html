@@ -66,24 +66,33 @@
     .brand-logo-sample { display:block; width:auto; max-width:220px; max-height:44px; }
     .show-examples .brand-logo-box { min-width:0; padding:0; border-color:transparent; }
     .show-examples .email-shell.is-branding .cta-button { background:#008C45 !important; color:#FFFFFF !important; }
-    .show-examples .email-shell.is-branding .info-table { border-top-color:#FFC600 !important; border-bottom-color:#FFC600 !important; }
+    .show-examples .email-shell.is-branding .info-table,
+    .show-examples .email-shell.is-branding .history-box { border-color:#FFC600 !important; }
     .hero-subtitle { font-size:16px; line-height:24px; font-weight:400; color:#6B7684; }
-    .section-title { padding:0 0 8px; font-size:18px; line-height:27px; font-weight:700; color:#191F28; }
+    .section-title { padding:0 0 8px; font-size:16px; line-height:24px; font-weight:700; color:#191F28; }
     .info-table { width:100%; border-top:1px solid #B0B8C1; border-bottom:1px solid #B0B8C1; font-size:14px; line-height:21px; }
-    .info-label { width:128px; padding:12px; background:#F9FAFB; border-bottom:1px solid #E5E8EB; font-weight:600; color:#191F28; }
+    .info-label { width:112px; padding:12px; background:#F9FAFB; border-bottom:1px solid #E5E8EB; font-size:14px; line-height:21px; font-weight:400; color:#6B7684; }
     .info-value { padding:12px; border-bottom:1px solid #E5E8EB; font-weight:400; color:#191F28; word-break:break-word; overflow-wrap:anywhere; }
     .info-table tr:last-child .info-label, .info-table tr:last-child .info-value { border-bottom:0; }
+    .info-table.is-rounded-card { border:1px solid #E5E8EB; border-radius:12px; border-collapse:separate; border-spacing:0; overflow:hidden; background:#FFFFFF; }
+    .info-table.is-complete-card .info-label { width:112px; padding:12px; background:#F9FAFB; font-size:14px; line-height:21px; font-weight:400; color:#6B7684; }
+    .info-table.is-complete-card .info-value { padding:12px; }
     .extra-block { margin-top:16px; }
-    .extra-title { padding-bottom:8px; font-size:16px; line-height:24px; font-weight:600; color:#191F28; }
+    .extra-title { padding-bottom:8px; font-size:16px; line-height:24px; font-weight:700; color:#191F28; }
     .history-box { padding:0; background:#FFFFFF; border:1px solid #E5E8EB; border-radius:12px; overflow:hidden; font-size:14px; line-height:21px; color:#4E5968; }
     .recipient-table { width:100%; border-collapse:collapse; table-layout:fixed; background:#FFFFFF; }
-    .recipient-table th { padding:10px 12px; border-bottom:1px solid #E5E8EB; font-size:12px; line-height:18px; font-weight:500; color:#6B7684; text-align:left; vertical-align:middle; }
+    .recipient-table th { padding:10px 12px; border-bottom:1px solid #E5E8EB; background:#F9FAFB; font-size:14px; line-height:21px; font-weight:400; color:#6B7684; text-align:left; vertical-align:middle; }
     .recipient-table td { padding:12px; border-bottom:1px solid #F2F4F6; font-size:14px; line-height:21px; color:#191F28; text-align:left; vertical-align:middle; overflow-wrap:anywhere; word-break:break-word; }
     .recipient-table tbody tr:last-child td { border-bottom:0; }
-    .recipient-table .recipient-order { width:48px; }
-    .recipient-table .recipient-name { width:25%; font-weight:600; }
-    .recipient-table .recipient-contact { color:#6B7684; }
-    .recipient-table .recipient-status { width:88px; font-weight:700; text-align:left; white-space:nowrap; }
+    .recipient-table .recipient-order { width:48px; text-align:center; }
+    .recipient-table .recipient-name { width:25%; }
+    .recipient-table .recipient-status { width:88px; text-align:left; white-space:nowrap; }
+    .email-shell.is-international .recipient-table .recipient-name { width:32%; }
+    .email-shell.is-international .recipient-table .recipient-status { width:104px; white-space:normal; word-break:keep-all; overflow-wrap:normal; }
+    .recipient-table td.recipient-order { color:#6B7684; }
+    .recipient-table td.recipient-name,
+    .recipient-table td.recipient-contact,
+    .recipient-table td.recipient-status { color:#191F28; font-weight:400; }
     .warning-box { padding:14px; background:#FFF1F1; border-radius:12px; color:#E63236; }
     .warning-title { font-size:16px; line-height:24px; font-weight:700; }
     .warning-text { margin-top:4px; font-size:14px; line-height:21px; font-weight:400; color:#4E5968; }
@@ -96,6 +105,7 @@
     .security { padding-top:12px; color:#6B7684; }
     .security-title { font-size:16px; line-height:24px; font-weight:600; }
     .security-text { padding-top:4px; font-size:14px; line-height:21px; font-weight:400; }
+    .security-desktop-continuation { display:block; }
     .security-gap { height:16px; }
     .legal-text { font-size:12px; line-height:18px; font-weight:400; color:#B0B8C1; }
     .footer-divider { height:16px; border-bottom:1px solid #B0B8C1; }
@@ -115,6 +125,8 @@
       .email-content { padding:48px 24px; }
       .hero-title { font-size:32px; line-height:48px; }
       .info-label { width:112px; }
+      .info-table.is-complete-card .info-label { width:112px; }
+      .security-desktop-continuation { display:inline !important; }
       .cta-table, .cta-table tbody, .cta-table tr, .cta-table td { display:block; width:100%; }
       .cta-gap { height:8px; }
     }
@@ -152,11 +164,11 @@
             <tr id="brand-description-row"><td id="brand-description" class="brand-description"></td></tr>
             <tr id="brand-description-gap"><td height="8" style="height:8px; font-size:0; line-height:0;">&nbsp;</td></tr>
             <tr id="recipient-row"><td id="recipient-line" class="recipient-line"></td></tr>
-            <tr id="recipient-gap"><td height="8" style="height:8px; font-size:0; line-height:0;">&nbsp;</td></tr>
+            <tr id="recipient-gap"><td height="4" style="height:4px; font-size:0; line-height:0;">&nbsp;</td></tr>
             <tr><td id="hero-title" class="hero-title"></td></tr>
-            <tr><td height="8" style="height:8px; font-size:0; line-height:0;">&nbsp;</td></tr>
+            <tr><td height="4" style="height:4px; font-size:0; line-height:0;">&nbsp;</td></tr>
             <tr><td id="hero-subtitle" class="hero-subtitle"></td></tr>
-            <tr><td height="12" style="height:12px; font-size:0; line-height:0;">&nbsp;</td></tr>
+            <tr><td height="16" style="height:16px; font-size:0; line-height:0;">&nbsp;</td></tr>
             <tr><td id="section-title" class="section-title"></td></tr>
             <tr><td><table id="info-table" class="info-table" role="presentation" border="0" cellpadding="0" cellspacing="0"><tbody id="info-body"></tbody></table></td></tr>
             <tr id="extra-row"><td><div id="extra-content" class="extra-block"></div></td></tr>
@@ -178,7 +190,7 @@
     const recipientList = recipients => `<table class="recipient-table"><thead><tr><th class="recipient-order" scope="col">순서</th><th class="recipient-name" scope="col">이름</th><th class="recipient-contact" scope="col">연락처</th><th class="recipient-status" scope="col">상태</th></tr></thead><tbody>${recipients.map((recipient,index) => `<tr><td class="recipient-order">${index + 1}</td><td class="recipient-name">${recipient.name}</td><td class="recipient-contact">${recipient.contact}</td><td class="recipient-status">${recipient.status}</td></tr>`).join('')}</tbody></table>`;
     const commonRecipients = recipientList([
       {name:'신호수',contact:'010-8816-8649',status:'서명 완료'},
-      {name:'김민지',contact:'010-5274-1938',status:'검토 완료'},
+      {name:'주식회사 글로벌비즈니스솔루션코리아',contact:'contract@globalbusiness.co.kr',status:'검토 완료'},
       {name:'이준호',contact:'010-2468-7531',status:'열람 완료'}
     ]);
 
@@ -186,84 +198,84 @@
       {
         id:'start-workflow', group:'문서·서명 워크플로', label:'1. 서명 요청', recipient:true,
         title:`${token('sender','박서준')}님이 문서 서명을 요청했습니다.`,
-        subtitle:'아래 요청 내용을 확인한 후 서명해 주세요.', section:'서명 요청 정보',
+        subtitle:'아래 버튼을 눌러 요청 정보를 확인하고 기한 내 문서에 서명해 주세요.', section:'서명 요청 정보',
         rows:[row('회사 이름','comp_name','주식회사 제이씨원'),row('문서 이름','doc_name',commonDocument),row('서명 요청자','sender','박서준'),row('메시지','comment','계약서 내용을 확인하신 후 기한 내 서명 부탁드립니다.'),row('작성 기한','expired_date','2026.08.15 18:00'),row('보낸 시간','start_time','2026.08.10 14:30')],
         helper:'계약 내용에 관하여 문의사항이 있으시면 서명 요청자에게 직접 연락해 주시길 바랍니다.', ctas:[['문서 확인 및 서명하기','button_url']], security:'full'
       },
       {
         id:'referrer-workflow', group:'문서·서명 워크플로', label:'2. 서명 진행 중', recipient:true,
-        title:'참조된 문서가 진행 중입니다.', subtitle:'진행 상황과 요청 정보를 확인해 주세요.', section:'서명 진행 정보',
+        title:'참조된 문서가 진행 중입니다.', subtitle:'아래 버튼을 눌러 문서의 진행 상황과 요청 정보를 확인해 주세요.', section:'서명 진행 정보',
         rows:[row('회사 이름','comp_name','주식회사 제이씨원'),row('문서 이름','doc_name',commonDocument),row('요청자','sender','박서준'),row('보낸 시간','start_time','2026.08.10 14:30')],
         helper:'문서의 현재 진행 상황은 아래 버튼에서 확인할 수 있습니다.', ctas:[['진행 중인 문서 확인하기','button_url']], security:'full'
       },
       {
         id:'complete-workflow', group:'문서·서명 워크플로', label:'3. 작성 완료', recipient:true,
-        title:'모든 서명이 완료되었습니다.', subtitle:'완료된 문서와 문서이력인증서를 내려받을 수 있습니다.', section:'서명 완료 정보',
-        rows:[row('회사 이름','comp_name','주식회사 제이씨원'),row('문서 이름','doc_name',commonDocument),row('완료 시간','completed_time','2026.08.11 10:20'),row('메시지','comment','계약이 정상적으로 완료되었습니다.')],
+        title:'모든 서명이 완료되었습니다.', subtitle:'아래 버튼을 눌러 완료 문서와 문서이력인증서를 확인하거나 저장해 주세요.', section:'서명 완료 정보',
+        rows:[row('회사 이름','comp_name','주식회사 제이씨원'),row('문서 이름','doc_name',commonDocument),row('완료 시간','completed_time','2026.08.11 10:20'),row('메시지','comment','계약서 내용을 확인하신 후 기한 내 서명 부탁드립니다.')],
         extra:{type:'recipients',value:token('contract_history',commonRecipients)}, helper:'완료 문서는 안전한 장소에 보관해 주세요.', ctas:[['완료문서 다운로드','download_btn'],['문서이력인증서 다운로드','downloadcert_btn']], security:'full'
       },
       {
         id:'complete-archiver', group:'문서·서명 워크플로', label:'4. 보관 완료', recipient:true,
-        title:'모든 서명이 완료되었습니다.', subtitle:'보관 기간 안에 완료 문서를 내려받아 주세요.', section:'문서 보관 정보',
-        rows:[row('회사 이름','comp_name','주식회사 제이씨원'),row('문서 이름','doc_name',commonDocument),row('완료 시간','completed_time','2026.08.11 10:20'),row('메시지','comment','계약이 정상적으로 완료되었습니다.')],
+        title:'모든 서명이 완료되었습니다.', subtitle:'유효기간 안에 아래 버튼을 눌러 완료 문서와 문서이력인증서를 확인하거나 저장해 주세요.', section:'문서 보관 정보',
+        rows:[row('회사 이름','comp_name','주식회사 제이씨원'),row('문서 이름','doc_name',commonDocument),row('완료 시간','completed_time','2026.08.11 10:20'),row('메시지','comment','계약서 내용을 확인하신 후 기한 내 서명 부탁드립니다.')],
         extra:{type:'archiver',recipients:token('contract_history',commonRecipients),days:token('arc_day','30'),date:token('link_date','2026.09.10')}, ctas:[['완료문서 다운로드','download_btn'],['문서이력인증서 다운로드','downloadcert_btn']], security:'full'
       },
       {
         id:'complete-link', group:'문서·서명 워크플로', label:'5. 완료문서 링크', recipient:true,
-        title:'모든 서명이 완료되었습니다.', subtitle:'아래 링크에서 완료된 문서를 확인해 주세요.', section:'서명 완료 정보',
+        title:'모든 서명이 완료되었습니다.', subtitle:'아래 버튼을 눌러 완료 문서와 문서이력인증서를 확인하거나 저장해 주세요.', section:'서명 완료 정보',
         rows:[row('회사 이름','comp_name','주식회사 제이씨원'),row('문서 이름','doc_name',commonDocument),row('완료 시간','completed_time','2026.08.11 10:20')],
         extra:{type:'recipients',value:token('contract_history',commonRecipients)}, ctas:[['완료문서 다운로드','download_btn'],['문서이력인증서 다운로드','downloadcert_btn']], security:'full'
       },
       {
         id:'return-workflow', group:'문서·서명 워크플로', label:'6. 문서 반려', recipient:true,
-        title:`${token('rejector','김이싸인')}님이 문서를 반려했습니다.`, subtitle:'반려 사유를 확인한 후 문서를 다시 작성해 주세요.', section:'문서 반려 정보',
+        title:`${token('rejector','김이싸인')}님이 문서를 반려했습니다.`, subtitle:'아래 버튼을 눌러 반려 사유를 확인하고 필요한 내용을 수정해 주세요.', section:'문서 반려 정보',
         rows:[row('회사 이름','comp_name','주식회사 제이씨원'),row('문서 이름','doc_name',commonDocument),row('요청자','sender','박서준'),row('메시지','comment','수정이 필요한 항목을 확인해 주세요.'),row('작성 기한','expired_date','2026.08.15 18:00'),row('보낸 시간','start_time','2026.08.10 14:30')],
         helper:'문의사항이 있으시면 요청자에게 직접 연락해 주세요.', ctas:[['문서 확인 및 서명하기','button_url']], security:'full'
       },
       {
         id:'cancel-workflow', group:'문서·서명 워크플로', label:'7. 문서 취소', recipient:false,
-        title:'문서가 취소되었습니다.', subtitle:'궁금한 사항은 취소한 사람에게 직접 문의해 주세요.', section:'문서 취소 정보',
+        title:'문서가 취소되었습니다.', subtitle:'취소 사유와 처리 정보를 확인해 주세요.', section:'문서 취소 정보',
         rows:[row('회사 이름','company_title','주식회사 제이씨원'),row('문서 이름','workflow_nm',commonDocument),{label:'취소한 사람',value:`${token('cancel_user','박서준')} (${token('cancel_user_email','park@jc1.co.kr')})`},row('취소 사유','cancel_reason','계약 조건 변경으로 요청을 취소했습니다.'),row('취소 시간','cancel_date','2026.08.11 09:40')], ctas:[], security:'confidential'
       },
       {
         id:'disposal-workflow', group:'문서·서명 워크플로', label:'8. 문서 폐기', recipient:false,
-        title:'문서가 폐기되었습니다.', subtitle:'궁금한 사항은 폐기한 사람에게 직접 문의해 주세요.', section:'문서 폐기 정보',
+        title:'문서가 폐기되었습니다.', subtitle:'폐기 사유와 처리 정보를 확인해 주세요.', section:'문서 폐기 정보',
         rows:[row('회사 이름','company_title','주식회사 제이씨원'),row('문서 이름','workflow_nm',commonDocument),{label:'폐기한 사람',value:`${token('disposal_user','박서준')} (${token('disposal_user_email','park@jc1.co.kr')})`},row('폐기 사유','disposal_reason','보관 기간이 만료되어 문서를 폐기했습니다.'),row('폐기 시간','disposal_date','2026.08.11 09:40')], ctas:[], security:'confidential'
       },
       {
         id:'start-viewer', group:'문서·서명 워크플로', label:'9. 열람 요청', recipient:true,
-        title:`${token('sender','박서준')}님이 문서 열람을 요청했습니다.`, subtitle:'아래 요청 내용을 확인한 후 문서를 열람해 주세요.', section:'문서 열람 정보',
+        title:`${token('sender','박서준')}님이 문서 열람을 요청했습니다.`, subtitle:'아래 버튼을 눌러 요청 정보와 문서 내용을 확인해 주세요.', section:'문서 열람 정보',
         rows:[row('회사 이름','comp_name','주식회사 제이씨원'),row('문서 이름','doc_name','2026년 전자계약 서비스 이용 계약서<br>개인정보 처리 위탁 부속 합의서'),row('요청자','sender','박서준'),row('메시지','comment','문서 내용을 확인해 주세요.'),row('열람 기한','expired_date','2026.08.15 18:00'),row('보낸 시간','start_time','2026.08.10 14:30')],
         helper:'문서 내용에 관한 문의사항은 요청자에게 직접 연락해 주세요.', ctas:[['문서 확인 및 열람하기','button_url']], security:'full'
       },
       {
         id:'bulk-notice', group:'문서·서명 워크플로', label:'10. 대량전송 시작', recipient:true,
-        title:token('notice_message','대량전송이 시작되었습니다.'), subtitle:'요청하신 대량전송 작업 정보를 확인해 주세요.', section:'대량전송 정보',
+        title:token('notice_message','대량전송이 시작되었습니다.'), subtitle:'전송 대상과 작업 정보를 확인해 주세요.', section:'대량전송 정보',
         rows:[row('회사 이름','comp_name','주식회사 제이씨원'),row('대량전송 이름','bulk_name','2026년 근로계약서 일괄 발송'),row('발신자','sender','박서준'),row('보낸 시간','start_time','2026.08.10 14:30')], ctas:[], security:'confidential'
       },
       {
         id:'start-approval', group:'승인·결재', label:'11. 승인 요청', recipient:false,
-        title:'문서를 승인해 주세요.', subtitle:'승인 요청 정보와 수신인을 확인해 주세요.', section:'승인 요청 정보',
+        title:'문서를 승인해 주세요.', subtitle:'아래 버튼을 눌러 요청 정보를 확인하고 기한 내 문서를 승인해 주세요.', section:'승인 요청 정보',
         rows:[row('회사명','comp_name','주식회사 제이씨원'),row('문서명','approval_nm',commonDocument),row('승인 요청자','sender','박서준'),row('승인자','approver_list','김승인, 이결재'),row('수신인','signer_list','김이싸인, 최서명'),row('작성 기한','expiry_date','2026.08.15 18:00')], ctas:[['문서 확인 및 승인하기','button_url']], security:'full'
       },
       {
         id:'complete-approval', group:'승인·결재', label:'12. 승인 완료', recipient:false,
-        title:'문서 승인 요청이 완료되었습니다.', subtitle:'완료된 승인 요청 정보를 확인해 주세요.', section:'승인 완료 정보',
+        title:'문서 승인 요청이 완료되었습니다.', subtitle:'아래 버튼을 눌러 완료된 승인 요청의 처리 정보를 확인해 주세요.', section:'승인 완료 정보',
         rows:[row('회사명','company_title','주식회사 제이씨원'),row('문서명','approval_nm',commonDocument),row('승인 요청자','sender','박서준'),row('승인자','approver_list','김승인, 이결재'),row('수신인','signer_list','김이싸인, 최서명'),row('작성 기한','expiry_date','2026.08.15 18:00')], ctas:[['요청 확인하기','button_url']], security:'full'
       },
       {
         id:'cancel-approval', group:'승인·결재', label:'13. 승인 취소', recipient:false,
-        title:'문서 승인 요청이 취소되었습니다.', subtitle:'취소된 승인 요청 정보를 확인해 주세요.', section:'승인 취소 정보',
+        title:'문서 승인 요청이 취소되었습니다.', subtitle:'아래 버튼을 눌러 취소 사유와 승인 요청 정보를 확인해 주세요.', section:'승인 취소 정보',
         rows:[row('회사명','company_title','주식회사 제이씨원'),row('문서명','approval_nm',commonDocument),row('승인 요청자','cancel_user','박서준'),row('승인자','approver_list','김승인, 이결재'),row('수신인','signer_list','김이싸인, 최서명'),row('취소 사유','cancel_reason','승인 절차가 변경되어 요청을 취소했습니다.')], ctas:[['요청 확인하기','button_url']], security:'full'
       },
       {
         id:'return-approval', group:'승인·결재', label:'14. 승인 반려', recipient:false,
-        title:'문서 승인 요청이 반려되었습니다.', subtitle:'반려 사유를 확인한 후 요청 내용을 수정해 주세요.', section:'승인 반려 정보',
+        title:'문서 승인 요청이 반려되었습니다.', subtitle:'아래 버튼을 눌러 반려 사유를 확인하고 필요한 내용을 수정해 주세요.', section:'승인 반려 정보',
         rows:[row('회사명','comp_name','주식회사 제이씨원'),row('문서명','approval_nm',commonDocument),row('승인 요청자','sender','박서준'),row('승인자','approver_list','김승인, 이결재'),row('수신인','signer_list','김이싸인, 최서명'),row('반려 사유','return_reason','계약 금액과 기간을 수정해 주세요.')], ctas:[['요청 확인하기','button_url']], security:'full'
       },
       {
         id:'expiration-approval', group:'승인·결재', label:'15. 요금제 만료', recipient:false,
-        title:'요금제가 만료되어 문서가 전송되지 않았습니다.', subtitle:'요금제를 구매한 후 문서를 다시 전송해 주세요.', section:'미전송 문서 정보',
+        title:'요금제가 만료되어 문서가 전송되지 않았습니다.', subtitle:'아래 버튼을 눌러 요금제를 확인한 후 문서를 다시 전송해 주세요.', section:'미전송 문서 정보',
         rows:[row('회사명','comp_name','주식회사 제이씨원'),row('문서명','approval_nm',commonDocument),row('승인 요청자','sender','박서준'),row('승인자','approver_list','김승인, 이결재'),row('수신인','signer_list','김이싸인, 최서명'),row('작성 기한','expiry_date','2026.08.15 18:00')],
         extra:{type:'warning',title:'요금제 확인이 필요합니다.',text:'현재 요금제가 만료되어 문서를 전송할 수 없습니다.'}, ctas:[['요금제 확인하기','button_url']], security:'full'
       }
@@ -337,7 +349,7 @@
           showDescription:definition.showDescription !== false,
           buttonBackground:'#0088FF',
           buttonText:'#FFFFFF',
-          lineColor:'#B0B8C1'
+          lineColor:'#E5E8EB'
         },
         ctas:definition.ctas
       };
@@ -348,10 +360,10 @@
         id:'example-complete-en', baseId:'complete-workflow', account:'locale-example', lang:'en',
         group:'다국어 길이 테스트 · 작성 완료', label:'English · 작성 완료', recipient:false,
         title:'All signatures have been completed.', subtitle:'You can download the completed document and its audit certificate.', section:'Completion details',
-        rows:[row('Company','comp_name','Wellington & Featherstone International Holdings Limited'),row('Document','doc_name','International Electronic Signature and Data Processing Agreement'),row('Completed at','completed_time','August 11, 2026, 10:20 AM'),row('Message','comment','The document has been completed successfully.')],
+        rows:[row('Company','comp_name','Wellington & Featherstone International Holdings Limited'),row('Document','doc_name','International Electronic Signature and Data Processing Agreement'),row('Completed at','completed_time','August 11, 2026, 10:20 AM'),row('Message','comment','Please review the agreement and sign it by the requested deadline.')],
         extra:{type:'recipients',value:token('contract_history',recipientList([
-          {name:'Alexandria Catherine Montgomery-Wellington',contact:'+1 202-555-0187',status:'Signature complete'},
-          {name:'Christopher Bartholomew Featherstonehaugh',contact:'+44 7700 900456',status:'Review complete'},
+          {name:'Alexandria Catherine Montgomery-Wellington',contact:'+1 202-555-0187',status:'Signed'},
+          {name:'Christopher Bartholomew Featherstonehaugh',contact:'+44 7700 900456',status:'Reviewed'},
           {name:'Maximilian Alexander von Hohenberg-Schönburg',contact:'+49 1512 3456789',status:'Viewed'}
         ]))}, ctas:[['Download document','download_btn'],['Download audit certificate','downloadcert_btn']], security:'full'
       },
@@ -359,7 +371,7 @@
         id:'example-complete-ja', baseId:'complete-workflow', account:'locale-example', lang:'ja',
         group:'다국어 길이 테스트 · 작성 완료', label:'日本語 · 작성 완료', recipient:false,
         title:'すべての署名が完了しました。', subtitle:'完了した文書と文書履歴証明書をダウンロードできます。', section:'署名完了情報',
-        rows:[row('会社名','comp_name','株式会社インターナショナル電子契約ソリューションズ'),row('文書名','doc_name','電子契約サービス利用および個人情報取扱業務委託契約書'),row('完了日時','completed_time','2026年8月11日 10:20'),row('メッセージ','comment','文書は正常に完了しました。')],
+        rows:[row('会社名','comp_name','株式会社インターナショナル電子契約ソリューションズ'),row('文書名','doc_name','電子契約サービス利用および個人情報取扱業務委託契約書'),row('完了日時','completed_time','2026年8月11日 10:20'),row('メッセージ','comment','契約書の内容をご確認のうえ、期限内にご署名ください。')],
         extra:{type:'recipients',value:token('contract_history',recipientList([
           {name:'佐々木 クリストファー・健太郎',contact:'090-1234-5678',status:'署名完了'},
           {name:'勅使河原 アレクサンドラ美咲',contact:'080-2468-1357',status:'確認完了'},
@@ -370,7 +382,7 @@
         id:'example-complete-th', baseId:'complete-workflow', account:'locale-example', lang:'th',
         group:'다국어 길이 테스트 · 작성 완료', label:'ไทย · 작성 완료', recipient:false,
         title:'การลงนามทั้งหมดเสร็จสมบูรณ์แล้ว', subtitle:'คุณสามารถดาวน์โหลดเอกสารที่เสร็จสมบูรณ์และใบรับรองประวัติเอกสารได้', section:'ข้อมูลการลงนามเสร็จสมบูรณ์',
-        rows:[row('ชื่อบริษัท','comp_name','บริษัท อินเตอร์เนชั่นแนล อิเล็กทรอนิกส์ ซิกเนเจอร์ จำกัด'),row('ชื่อเอกสาร','doc_name','ข้อตกลงการใช้บริการลายมือชื่ออิเล็กทรอนิกส์และการประมวลผลข้อมูลส่วนบุคคล'),row('เวลาที่เสร็จสิ้น','completed_time','11 สิงหาคม 2569 10:20 น.'),row('ข้อความ','comment','เอกสารเสร็จสมบูรณ์เรียบร้อยแล้ว')],
+        rows:[row('ชื่อบริษัท','comp_name','บริษัท อินเตอร์เนชั่นแนล อิเล็กทรอนิกส์ ซิกเนเจอร์ จำกัด'),row('ชื่อเอกสาร','doc_name','ข้อตกลงการใช้บริการลายมือชื่ออิเล็กทรอนิกส์และการประมวลผลข้อมูลส่วนบุคคล'),row('เวลาที่เสร็จสิ้น','completed_time','11 สิงหาคม 2569 10:20 น.'),row('ข้อความ','comment','โปรดตรวจสอบรายละเอียดในเอกสารและลงนามภายในกำหนดเวลา')],
         extra:{type:'recipients',value:token('contract_history',recipientList([
           {name:'ณัฐวุฒิ ศรีสวัสดิ์วัฒนากุล',contact:'081-234-5678',status:'ลงนามแล้ว'},
           {name:'พิมพ์ชนก รัตนสุวรรณกุลชัย',contact:'089-765-4321',status:'ตรวจสอบแล้ว'},
@@ -381,7 +393,7 @@
         id:'example-complete-zh', baseId:'complete-workflow', account:'locale-example', lang:'zh-CN',
         group:'다국어 길이 테스트 · 작성 완료', label:'中文 · 작성 완료', recipient:false,
         title:'所有签署均已完成。', subtitle:'您可以下载已完成的文件和文件历史证明。', section:'签署完成信息',
-        rows:[row('公司名称','comp_name','国际电子签约与数据处理服务有限公司'),row('文件名称','doc_name','电子签约服务使用及个人信息处理委托协议'),row('完成时间','completed_time','2026年8月11日 10:20'),row('消息','comment','文件已顺利完成。')],
+        rows:[row('公司名称','comp_name','国际电子签约与数据处理服务有限公司'),row('文件名称','doc_name','电子签约服务使用及个人信息处理委托协议'),row('完成时间','completed_time','2026年8月11日 10:20'),row('消息','comment','请确认文件内容并在指定期限内完成签署。')],
         extra:{type:'recipients',value:token('contract_history',recipientList([
           {name:'阿卜杜拉·阿不都热依木',contact:'138-0013-8000',status:'签署完成'},
           {name:'欧阳司徒慕容嘉怡',contact:'139-2468-1357',status:'审核完成'},
@@ -399,7 +411,7 @@
       <div class="security-text">메일이나 링크를 공유할 경우, 승인되지 않은 제3자가 문서를 열람하거나 서명할 수 있습니다.<br>이때 발생하는 문제에 대해서는 서비스 제공자가 책임지지 않습니다.</div>
       <div class="security-gap"></div>
       <div class="security-title">문서 진행이 끝날 때까지 메일을 삭제하거나 수신을 거부하지 마세요.</div>
-      <div class="security-text">메일 삭제나 수신 거부 등 사용자의 귀책사유로 문서 관련 안내를 받지 못해<br>발생하는 문제는 서비스 제공자가 책임지지 않습니다.</div>
+      <div class="security-text">메일 삭제나 수신 거부 등 사용자의 귀책사유로 문서 관련 안내를 받지 못해 <span class="security-desktop-continuation">발생하는 문제는 서비스 제공자가 책임지지 않습니다.</span></div>
       <div class="security-gap"></div>
       <div class="legal-text">*상기 메시지는 의도된 수신자만 이용하도록 전송되었으며, 비밀정보와 특권정보가 포함되어 있을 수 있습니다.<br>권한 없이 이 정보들을 열람, 사용, 공개, 배포하는 것은 금지되어 있습니다. 만일 귀하가 의도된 수신자가 아닌 경우,<br>회신 메일로 송신자에게 연락해주시고 원본 메시지와 모든 사본을 폐기하여 주시기 바랍니다.</div>`;
     const confidentialSecurity = `<div class="legal-text">*본 메일은 의도된 수신자만 이용하도록 전송되었으며 문서 관련 정보가 포함되어 있을 수 있습니다. 의도된 수신자가 아니라면 본 메일을 즉시 삭제해 주세요.</div>`;
@@ -440,6 +452,7 @@
       const isBranding = item.account === 'branding';
       const emailShell = document.querySelector('.email-shell');
       emailShell.classList.toggle('is-branding', isBranding);
+      emailShell.classList.toggle('is-international', Boolean(item.lang && item.lang !== 'ko'));
       emailShell.setAttribute('lang', item.lang || 'ko');
       const headerLogo = document.getElementById('header-logo');
       headerLogo.innerHTML = isBranding
@@ -465,12 +478,17 @@
       document.getElementById('section-title').textContent = item.section;
       document.getElementById('info-body').innerHTML = item.rows.map(data => `<tr><td class="info-label">${data.label}</td><td class="info-value">${data.value}</td></tr>`).join('');
       const infoTable = document.getElementById('info-table');
-      infoTable.style.borderTopColor = isBranding ? item.brand.lineColor : '#B0B8C1';
-      infoTable.style.borderBottomColor = isBranding ? item.brand.lineColor : '#B0B8C1';
+      const isCompleteCard = ['complete-workflow','complete-archiver','complete-link'].includes(item.baseId || item.id);
+      infoTable.classList.toggle('is-complete-card', isCompleteCard);
+      infoTable.classList.add('is-rounded-card');
+      infoTable.style.borderColor = isBranding ? item.brand.lineColor : '';
 
       const extraRow = document.getElementById('extra-row');
       extraRow.style.display = item.extra ? '' : 'none';
       document.getElementById('extra-content').innerHTML = renderExtra(item.extra);
+      document.querySelectorAll('#extra-content .history-box').forEach(box => {
+        box.style.borderColor = isBranding ? item.brand.lineColor : '';
+      });
 
       const ctaRow = document.getElementById('cta-row');
       ctaRow.style.display = item.ctas.length ? '' : 'none';
